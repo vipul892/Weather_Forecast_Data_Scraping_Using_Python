@@ -1,51 +1,45 @@
 # 🌦️ Weather Forecast Web Scraping using Selenium
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![Selenium](https://img.shields.io/badge/Selenium-Automation-brightgreen?logo=selenium)
-![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-blue?logo=pandas)
-![CSV](https://img.shields.io/badge/CSV-Data%20Storage-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-A Python automation project that uses **Selenium WebDriver** to scrape weather forecast information from a weather website and save the extracted data into a **CSV file**.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-blue?logo=python" />
+  <img src="https://img.shields.io/badge/Selenium-Web%20Automation-43B02A?logo=selenium" />
+  <img src="https://img.shields.io/badge/MySQL-Database-4479A1?logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/Pandas-Data%20Processing-150458?logo=pandas" />
+  <img src="https://img.shields.io/badge/CSV-Data%20Storage-orange" />
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen" />
+</p>
 
 ---
 
-# 📌 Project Overview
+# 📖 Project Overview
 
-The **Weather Forecast Web Scraping** project automates the process of collecting weather information from a website using Selenium.
+The **Weather Forecast Web Scraping** project is a Python automation application that extracts weather forecast information from a weather website using **Selenium WebDriver**.
 
-The application launches a web browser, navigates to the weather website, extracts the required weather details, and stores them in a structured **CSV file** for future analysis.
+The scraped weather data is processed and stored in both:
 
-This project demonstrates:
+- 📄 **CSV File**
+- 🗄️ **MySQL Database**
 
-- 🌐 Browser Automation
-- 🔍 Web Scraping
-- 📊 CSV Data Storage
-- 🐍 Python Automation
+This project demonstrates browser automation, web scraping, file handling, database connectivity, and structured data storage.
 
 ---
 
 # 🎯 Objective
 
-The objective of this project is to automate weather data collection instead of manually visiting weather websites.
-
-The extracted weather information is stored in a CSV file, making it easy to analyze or use in other applications.
+The objective of this project is to automate the process of collecting weather information from a website and storing it in multiple formats for future analysis and reporting.
 
 ---
 
 # ✨ Features
 
-✅ Automated Browser Launch
-
-✅ Weather Data Extraction
-
-✅ Selenium WebDriver Automation
-
-✅ CSV File Generation
-
-✅ Exception Handling
-
-✅ Beginner Friendly
+- 🌐 Automated Browser Control using Selenium
+- 🔍 Weather Data Scraping
+- 📄 CSV File Storage
+- 🗄️ MySQL Database Storage
+- ⚡ Fast Data Extraction
+- ❌ Exception Handling
+- 📊 Structured Data Management
+- 🐍 Beginner-Friendly Python Project
 
 ---
 
@@ -55,71 +49,50 @@ The extracted weather information is stored in a CSV file, making it easy to ana
 |------------|----------|
 | 🐍 Python | Programming Language |
 | 🤖 Selenium | Browser Automation |
-| 📊 Pandas | Data Processing |
-| 📄 CSV | Data Storage |
-| 💻 VS Code | Development Environment |
-| 🗂 Git & GitHub | Version Control |
+| 🗄️ MySQL | Database Storage |
+| 🐼 Pandas | Data Processing |
+| 📄 CSV | File Storage |
+| 🔗 MySQL Connector | Database Connectivity |
+| 💻 VS Code | IDE |
+| 🗂️ Git & GitHub | Version Control |
 
 ---
-
-# 📂 Project Structure
-
-```text
-Weather_Forecast_WebScraping/
-│
-├── data/
-│   └── weather_data.csv
-│
-├── screenshots/
-│
-├── main.py
-├── scraper.py
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
 ---
 
 # ⚙️ Workflow
 
 ```text
-Start
-   │
-   ▼
-Launch Chrome Browser
-   │
-   ▼
-Open Weather Website
-   │
-   ▼
-Search City
-   │
-   ▼
-Extract Weather Data
-   │
-   ▼
-Create DataFrame
-   │
-   ▼
-Save CSV File
-   │
-   ▼
-Close Browser
-   │
-   ▼
-End
+               Start
+                  │
+                  ▼
+        Launch Chrome Browser
+                  │
+                  ▼
+         Open Weather Website
+                  │
+                  ▼
+          Search for City Name
+                  │
+                  ▼
+        Extract Weather Information
+                  │
+          ┌───────┴────────┐
+          ▼                ▼
+ Store Data in CSV   Store Data in MySQL
+          │                │
+          └───────┬────────┘
+                  ▼
+          Close Browser
+                  │
+                  ▼
+                 End
 ```
 
 ---
 
 # 📥 Input
 
-The user provides:
-
-```text
-City Name
-```
+The user enters a city name.
 
 Example:
 
@@ -129,20 +102,29 @@ Pune
 
 ---
 
-# 📤 Output
+# 📤 Extracted Weather Information
 
-The application extracts weather information such as:
+The application extracts the following information:
 
 - 🌍 City Name
-- 🌡 Temperature
-- ☁ Weather Condition
+- 🌡️ Temperature
+- ☁️ Weather Condition
 - 💧 Humidity
 - 💨 Wind Speed
 - 📈 Pressure
+- 📅 Date & Time (Optional)
 
 ---
 
-# 📄 Sample CSV Output
+# 📄 CSV Output
+
+The extracted data is saved in:
+
+```text
+data/weather_data.csv
+```
+
+Example:
 
 | City | Temperature | Condition | Humidity | Wind Speed | Pressure |
 |------|-------------|-----------|----------|------------|----------|
@@ -152,34 +134,67 @@ The application extracts weather information such as:
 
 ---
 
-# 📚 Python Concepts Used
+# 🗄️ MySQL Database
 
-- Variables
-- Functions
-- Loops
-- Exception Handling
-- Selenium WebDriver
-- File Handling
-- Pandas DataFrame
-- CSV File Export
+## Database
+
+```sql
+weather_db
+```
+
+---
+
+## Table
+
+```sql
+weather_data
+```
+
+---
+
+## Table Structure
+
+| Column | Data Type |
+|----------|------------|
+| id | INT (Primary Key) |
+| city | VARCHAR(100) |
+| temperature | VARCHAR(20) |
+| condition | VARCHAR(100) |
+| humidity | VARCHAR(20) |
+| wind_speed | VARCHAR(20) |
+| pressure | VARCHAR(20) |
+| scraped_at | DATETIME |
+
+---
+
+# 🖥️ Sample SQL Table
+
+| id | city | temperature | condition | humidity | wind_speed | pressure |
+|----|------|-------------|-----------|----------|------------|----------|
+| 1 | Pune | 30°C | Cloudy | 72% | 15 km/h | 1008 hPa |
+| 2 | Mumbai | 29°C | Rainy | 81% | 18 km/h | 1005 hPa |
 
 ---
 
 # 📦 Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/your-username/Weather_Forecast_WebScraping.git
 ```
 
-### Go to Project Folder
+---
+
+## Navigate to Project Folder
 
 ```bash
 cd Weather_Forecast_WebScraping
 ```
 
-### Install Required Packages
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -192,6 +207,7 @@ pip install -r requirements.txt
 ```text
 selenium
 pandas
+mysql-connector-python
 ```
 
 ---
@@ -204,82 +220,60 @@ python main.py
 
 ---
 
-# 📊 Output File
+# 📚 Python Concepts Used
 
-After successful execution, a CSV file is generated.
+- Variables
+- Functions
+- Loops
+- Selenium WebDriver
+- File Handling
+- CSV Operations
+- MySQL Database Connectivity
+- Exception Handling
+- Data Processing using Pandas
 
-```text
-data/
-   weather_data.csv
-```
+---
 
 ---
 
 # 🚀 Future Enhancements
 
-- 🌍 Multiple City Support
-- 📅 Daily Automatic Data Collection
-- 📈 Excel Export
-- 🗄 Database Integration
-- 📊 Streamlit Dashboard
-- 📧 Email Notification
-- ☁ Cloud Deployment
+- 🌍 Scrape Weather for Multiple Cities
+- ⏰ Automatic Daily Weather Updates
+- 📊 Interactive Dashboard using Streamlit
+- 📈 Weather Trend Analysis
+- 📧 Email Notifications
+- ☁️ Cloud Deployment
+- 📱 REST API Integration
 
 ---
 
-# 💡 Learning Outcomes
+# 📈 Learning Outcomes
 
-After completing this project, you will understand:
+By completing this project, you will gain practical experience in:
 
-- Selenium WebDriver
-- Browser Automation
-- Web Scraping
+- Selenium Web Automation
+- Web Scraping Techniques
 - HTML Element Inspection
-- Data Extraction
 - CSV File Handling
-- Exception Handling
-- Python Automation
+- MySQL Database Operations
+- Python Exception Handling
+- Data Storage and Management
+- Git & GitHub Version Control
 
 ---
 
-# 📷 Project Screenshot
-
-> Add your screenshot here.
-
-```
-screenshots/weather_output.png
-```
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-If you'd like to improve this project:
-
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Push to GitHub
-5. Create a Pull Request
-
----
-
-# 📜 License
-
-This project is licensed under the **MIT License**.
-
----
 
 # 👨‍💻 Author
 
 **Vipul Alsundkar**
-
-- 💼 Software Testing Engineer
-- 🐍 Python Automation Enthusiast
-- 🌐 Learning Selenium, Web Scraping, SQL & Machine Learning
-
+💼 Data Analytics & Data Science Enthusiast
 ---
 
-## ⭐ If you found this project helpful, don't forget to Star ⭐ the repository!
+<div align="center">
+
+### ⭐ If you found this project helpful, please give it a Star! ⭐
+
+**Happy Coding! 🚀**
+
+</div>
