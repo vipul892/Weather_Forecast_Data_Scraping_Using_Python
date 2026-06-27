@@ -57,7 +57,6 @@ The objective of this project is to automate the process of collecting weather i
 | 🗂️ Git & GitHub | Version Control |
 
 ---
----
 
 # ⚙️ Workflow
 
@@ -234,8 +233,6 @@ python main.py
 
 ---
 
----
-
 # 🚀 Future Enhancements
 
 - 🌍 Scrape Weather for Multiple Cities
@@ -267,7 +264,7 @@ By completing this project, you will gain practical experience in:
 # 👨‍💻 Author
 
 **Vipul Alsundkar**
-💼 Data Analytics & Data Science Enthusiast
+- 💼 Data Analytics & Data Science Enthusiast
 ---
 
 <div align="center">
